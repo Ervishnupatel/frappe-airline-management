@@ -256,3 +256,11 @@ app_license = "mit"
 # List of apps whose translatable strings should be excluded from this app's translations.
 # ignore_translatable_strings_from = []
 
+doc_events = {
+    "Employee": {
+        "after_insert": "sky_app.sky.api.sync_employee.sync_employee_to_cms",
+        "on_update":    "sky_app.sky.api.sync_employee.sync_employee_to_cms",
+        "on_trash":     "sky_app.sky.api.sync_employee.delete_employee_from_cms",
+    }
+}
+

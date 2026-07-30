@@ -1,0 +1,11 @@
+{% set color = frappe.form_dict.color or "black" %}
+
+<h1>Selected Color: {{ color }}</h1>
+
+<div style="
+    width: 300px;
+    height: 150px;
+    background-color: {{ color }};
+    border: 2px solid black;
+">
+</div>
