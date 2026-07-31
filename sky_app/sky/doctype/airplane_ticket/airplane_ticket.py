@@ -1,12 +1,20 @@
-import frappe
 from frappe.model.document import Document
-frappe.msgprint("before_save is running")
+
 
 class AirplaneTicket(Document):
 
-    def before_save(self):
-        frappe.msgprint("before_save is running")
+    def validate(self):
+        unique_items = []
+        seen = set()
 
+        for addon in self.add_ons:
+            if addon.item not in seen:
+                seen.add(addon.item)
+                unique_items.append(addon)
+
+        self.add_ons = unique_items
+
+    def before_save(self):
         total = self.flight_price or 0
 
         for addon in self.add_ons:
