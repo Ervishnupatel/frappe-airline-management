@@ -16,7 +16,8 @@
   "departure_time",
   "duration__of_flight",
   "status",
-  "amended_from"
+  "amended_from",
+  "add_ons"
  ],
  "fields": [
   {
@@ -103,13 +104,19 @@
    "print_hide": 1,
    "read_only": 1,
    "search_index": 1
+  },
+  {
+   "fieldname": "add_ons",
+   "fieldtype": "Table",
+   "label": "Add_ons",
+   "options": "Airplane Ticket Add-on Item"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2026-07-30 10:41:47.558011",
+ "modified": "2026-07-31 12:01:12.762201",
  "modified_by": "Administrator",
  "module": "Sky",
  "name": "Airplane Ticket",
