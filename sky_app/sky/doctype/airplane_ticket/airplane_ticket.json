@@ -1,20 +1,19 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "format:{flight}-{source_airport_code}-to-{destination_airport_code}-{###}",
+ "autoname": "format:{flight}-{###}",
  "creation": "2026-07-30 09:38:55.929089",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
   "passenger",
-  "source_airport",
-  "destination_airport",
+  "flight",
   "source_airport_code",
   "destination_airport_code",
-  "flight",
   "departure_date",
   "departure_time",
   "duration__of_flight",
+  "seat",
   "status",
   "amended_from",
   "add_ons",
@@ -31,23 +30,14 @@
    "reqd": 1
   },
   {
-   "fieldname": "source_airport",
+   "fieldname": "flight",
    "fieldtype": "Link",
-   "in_list_view": 1,
-   "label": "Source Airport",
-   "options": "Airport",
+   "label": "Flight",
+   "options": "Airplane Flight",
    "reqd": 1
   },
   {
-   "fieldname": "destination_airport",
-   "fieldtype": "Link",
-   "label": "Destination Airport",
-   "mask": 1,
-   "options": "Airport",
-   "reqd": 1
-  },
-  {
-   "fetch_from": "source_airport.code",
+   "fetch_from": "flight.source_airport_code",
    "fieldname": "source_airport_code",
    "fieldtype": "Data",
    "in_list_view": 1,
@@ -55,7 +45,7 @@
    "read_only": 1
   },
   {
-   "fetch_from": "destination_airport.code",
+   "fetch_from": "flight.destination_airport_code",
    "fieldname": "destination_airport_code",
    "fieldtype": "Data",
    "in_list_view": 1,
@@ -63,30 +53,31 @@
    "read_only": 1
   },
   {
-   "fieldname": "flight",
-   "fieldtype": "Link",
-   "label": "Flight",
-   "options": "Airplane",
-   "reqd": 1
-  },
-  {
+   "fetch_from": "flight.date_of_departure",
    "fieldname": "departure_date",
    "fieldtype": "Date",
-   "in_filter": 1,
-   "label": "Departure Date ",
-   "reqd": 1
+   "label": "Departure Date",
+   "read_only": 1
   },
   {
+   "fetch_from": "flight.time_of_departure",
    "fieldname": "departure_time",
    "fieldtype": "Time",
    "label": "Departure Time",
-   "reqd": 1
+   "read_only": 1
   },
   {
+   "fetch_from": "flight.duration",
    "fieldname": "duration__of_flight",
    "fieldtype": "Duration",
-   "label": "Duration  of Flight",
-   "reqd": 1
+   "label": "Duration of Flight",
+   "read_only": 1
+  },
+  {
+   "fieldname": "seat",
+   "fieldtype": "Data",
+   "label": "Seat",
+   "read_only": 1
   },
   {
    "default": "Booked",
@@ -110,7 +101,7 @@
   {
    "fieldname": "add_ons",
    "fieldtype": "Table",
-   "label": "Add_ons",
+   "label": "Add Ons",
    "options": "Airplane Ticket Add-on Item"
   },
   {
@@ -130,7 +121,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2026-07-31 14:16:03.141248",
+ "modified": "2026-07-31 15:34:07.436279",
  "modified_by": "Administrator",
  "module": "Sky",
  "name": "Airplane Ticket",
