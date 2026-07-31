@@ -34,8 +34,13 @@
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
- "links": [],
- "modified": "2026-07-30 08:44:48.655341",
+ "links": [
+  {
+   "link_doctype": "Airplane",
+   "link_fieldname": "airline"
+  }
+ ],
+ "modified": "2026-07-31 11:27:28.383901",
  "modified_by": "Administrator",
  "module": "Sky",
  "name": "Airline",
