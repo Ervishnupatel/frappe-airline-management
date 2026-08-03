@@ -1,13 +1,13 @@
+import random
+
 import frappe
 from frappe.model.document import Document
 
+
 class AirplaneTicket(Document):
 
-    def before_naming(self):
-        if self.flight:
-            flight = frappe.get_doc("Airplane Flight", self.flight)
-            self.source_airport_code = flight.source_airport_code
-            self.destination_airport_code = flight.destination_airport_code
+    def before_insert(self):
+        self.seat = f"{random.randint(1, 99)}{random.choice('ABCDE')}"
 
     def validate(self):
         unique_items = []

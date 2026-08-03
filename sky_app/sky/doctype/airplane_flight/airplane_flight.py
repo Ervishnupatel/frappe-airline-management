@@ -1,9 +1,8 @@
-# Copyright (c) 2026, xzy and contributors
-# For license information, please see license.txt
-
-# import frappe
+import frappe
 from frappe.model.document import Document
 
 
 class AirplaneFlight(Document):
-	pass
+
+    def on_submit(self):
+        self.db_set("status", "Completed")
