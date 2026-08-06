@@ -1,5 +1,25 @@
-{% extends "templates/web.html" %}
+<div style="border:1px solid #ccc; padding:20px; margin:20px;">
 
-{% block page_content %}
-    {% include "templates/includes/list/list.html" %}
-{% endblock %}
+    <h3>{{ frappe.db.get_value("Airplane", doc.airplane, "airline") }}</h3>
+
+    <p>
+        {{ doc.source_airport_code }}
+        →
+        {{ doc.destination_airport_code }}
+    </p>
+
+    <p>
+        {{ frappe.utils.format_date(doc.date_of_departure, "d MMMM, YYYY") }}
+    </p>
+
+    <p>
+        {{ doc.time_of_departure }}
+    </p>
+
+    <p>
+        {{ frappe.utils.format_duration(doc.duration) }}
+    </p>
+
+    <a href="/{{ doc.route }}">View Flight</a>
+
+</div>

@@ -1,0 +1,6 @@
+{% set bg_color = frappe.form_dict.get("color") or "black" %}
+{% set title = frappe.form_dict.get("title") or "Show Me" %}
+
+<div style="min-height: 100vh; background-color: {{ bg_color }};">
+    <h1>{{ title }}</h1>
+</div>
