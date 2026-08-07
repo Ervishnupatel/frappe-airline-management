@@ -8,7 +8,8 @@
  "field_order": [
   "founding_year",
   "customer_care_number",
-  "headquaters"
+  "headquaters",
+  "website"
  ],
  "fields": [
   {
@@ -30,6 +31,12 @@
    "in_list_view": 1,
    "label": "headquaters",
    "reqd": 1
+  },
+  {
+   "fieldname": "website",
+   "fieldtype": "Data",
+   "label": "Website",
+   "options": "URL"
   }
  ],
  "grid_page_length": 50,
