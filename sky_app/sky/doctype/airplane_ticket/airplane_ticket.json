@@ -8,6 +8,7 @@
  "field_order": [
   "passenger",
   "flight",
+  "gate_number",
   "source_airport_code",
   "destination_airport_code",
   "departure_date",
@@ -115,13 +116,18 @@
    "fieldtype": "Currency",
    "label": "Total Amount",
    "read_only": 1
+  },
+  {
+   "fieldname": "gate_number",
+   "fieldtype": "Data",
+   "label": "Gate Number"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2026-08-13 14:40:17.624602",
+ "modified": "2026-08-20 18:13:35.897421",
  "modified_by": "Administrator",
  "module": "Sky",
  "name": "Airplane Ticket",

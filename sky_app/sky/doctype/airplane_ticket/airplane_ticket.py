@@ -5,6 +5,10 @@ from frappe.model.document import Document
 
 class AirplaneTicket(Document):
     def validate(self):
+        self.total_amount = frappe.utils.flt(self.flight_price) + sum(
+            frappe.utils.flt(add_on.amount) for add_on in self.get("add_ons")
+        )
+
         # Validate seat format
         if self.seat and not re.match(r"^[0-9]+[A-Z]$", self.seat):
             frappe.throw("Invalid seat number format")
@@ -32,3 +36,4 @@ class AirplaneTicket(Document):
 
         if ticket_count >= capacity:
             frappe.throw("This flight is fully booked.")
+

@@ -23,7 +23,7 @@
  "filters": [],
  "idx": 0,
  "is_standard": "Yes",
- "json": "{\"filters\":[],\"fields\":[[\"airline\",\"Airplane\",\"airline\"]],\"order_by\":\"_aggregate_column desc\",\"add_totals_row\":0,\"group_by\":{\"group_by\":\"airline\",\"aggregate_function\":\"count\",\"aggregate_on\":null}}",
+ "json": "{\"filters\":[],\"fields\":[[\"airline\",\"Airplane\",\"airline\"]],\"order_by\":\"_aggregate_column desc\",\"add_totals_row\":0,\"group_by\":{\"group_by\":\"`tabAirplane`.`airline`\",\"aggregate_function\":\"count\",\"aggregate_on\":null}}",
  "letter_head": null,
  "modified": "2026-08-13 09:25:50.951624",
  "modified_by": "Administrator",
